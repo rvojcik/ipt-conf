@@ -1,0 +1,5 @@
+$iptables -A INPUT -p TCP --dport 24800 -j DROP
+
+if [[ "$IPV6_ENABLE" = "YES" ]] ; then 
+	$ip6tables -A INPUT -p TCP --dport 24800 -j DROP
+fi
