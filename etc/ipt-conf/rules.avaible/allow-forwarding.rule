@@ -2,6 +2,6 @@
 ###### Forwarding #######
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
-if [ "$IPV6_ENABLE" = "YES" ] ; then 
+if [[ "$IPV6_ENABLE" = "YES" ]] ; then 
 	echo 1 > /proc/sys/net/ipv6/conf/all/forwarding
 fi

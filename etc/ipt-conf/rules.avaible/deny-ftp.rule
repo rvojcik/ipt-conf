@@ -2,7 +2,7 @@
 $iptables -A INPUT -p TCP --dport 20 -j DROP
 $iptables -A INPUT -p TCP --dport 21 -j DROP
 
-if [ "$IPV6_ENABLE" = "YES" ] ; then 
+if [[ "$IPV6_ENABLE" = "YES" ]] ; then 
 	$ip6tables -A INPUT -p TCP --dport 20 -j DROP
 	$ip6tables -A INPUT -p TCP --dport 21 -j DROP
 fi

@@ -4,7 +4,7 @@ $iptables -A INPUT -p UDP --dport 161 -j ACCEPT
 $iptables -A INPUT -p TCP --dport 162 -j ACCEPT
 $iptables -A INPUT -p UDP --dport 162 -j ACCEPT
 
-if [ "$IPV6_ENABLE" = "YES" ] ; then 
+if [[ "$IPV6_ENABLE" = "YES" ]] ; then 
 	$ip6tables -A INPUT -p TCP --dport 161 -j ACCEPT
 	$ip6tables -A INPUT -p UDP --dport 161 -j ACCEPT
 	$ip6tables -A INPUT -p TCP --dport 162 -j ACCEPT

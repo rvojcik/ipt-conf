@@ -6,13 +6,13 @@ echo
 
 for IP in $IPS ; do 
 	echo -n "Blocking $IP "
-	$iptables -A INPUT -p all -s $IP -j DROP && echo "[OK]" || echo "[ERROR]"
+	$iptables -A INPUT -p all -s $IP -j DROP && echo "[[OK]]" || echo "[[ERROR]]"
 done
 
-if [ "$IPV6_ENABLE" = "YES" ] ; then 
+if [[ "$IPV6_ENABLE" = "YES" ]] ; then 
 
 	for IP in $IPSV6 ; do 
 		echo -n "Blocking $IP "
-		$ip6tables -A INPUT -p all -s $IP -j DROP && echo "[OK]" || echo "[ERROR]"
+		$ip6tables -A INPUT -p all -s $IP -j DROP && echo "[[OK]]" || echo "[[ERROR]]"
 	done
 fi

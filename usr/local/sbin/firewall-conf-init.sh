@@ -6,13 +6,13 @@ echo "---------------------------"
 MAINCONF="/etc/ipt.conf"
 CONFDIR="/etc/ipt-conf"
 INITDIR="/etc/init.d"
-IPTABLES_PATH=`whereis iptables | awk '{print $2}'`
-IP6TABLES_PATH=`whereis ip6tables | awk '{print $2}'`
+IPTABLES_PATH=$(which iptables)
+IP6TABLES_PATH=$(which ip6tables)
 
 echo -n "Enable IPv6 protocol ? [y/n] [n] "
 read ans
 
-if [ "$ans" = "y" ] ; then 
+if [[ "$ans" = "y" ]] ; then 
 	IPV6="YES"
 else
 	IPV6="NO"
@@ -28,7 +28,7 @@ else
 	ans="y"
 fi
 
-if [ "$ans" == "y" ] ; then 
+if [[ "$ans" == "y" ]] ; then 
 	echo -e "CONFDIR=${CONFDIR}\nINITDIR=$INITDIR" > $MAINCONF
 fi
 
@@ -42,7 +42,7 @@ else
 	ans="y"
 fi
 
-if [ "$ans" == "y" ] ; then 
+if [[ "$ans" == "y" ]] ; then 
 
 	echo "iptables=$IPTABLES_PATH
 ip6tables=$IP6TABLES_PATH
@@ -73,6 +73,6 @@ fi
 echo "
 --------------------------------------------------------------
 Firewall is not started for now, 
-please check $CONFDIR/rules.enabled and if you sure run 
+please check $CONFDIR/rules.enabled and if you are sure run 
 $INITDIR/ipt-conf restart
 --------------------------------------------------------------"

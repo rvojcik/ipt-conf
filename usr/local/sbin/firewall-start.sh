@@ -2,14 +2,14 @@
 
 . /etc/ipt.conf
 
-echo "Starting edrive firewall"
+echo "Starting firewall"
 
 if [ -e $CONFDIR/firewall.conf ] ; then 
 
 . $CONFDIR/firewall.conf
 
 
-for rule in `ls -1 $CONFDIR/rules.enabled/*.rule` ; do 
+for rule in $CONFDIR/rules.enabled/*.rule ; do 
 	echo -n "Adding $rule"
 	. $rule && echo "[OK]" || echo "[ERROR]"
 done

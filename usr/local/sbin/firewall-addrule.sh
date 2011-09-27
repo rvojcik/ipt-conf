@@ -60,7 +60,7 @@ function enable_rules {
 }
 
 
-if [ "$1" = "" ] ; then 
+if [[ "$1" = "" ]] ; then 
 	echo "Avaible rules are:"
 	ls -1 $CONFDIR/rules.avaible/ | grep -e "rule$" | sed -e 's/\.rule$//'
 	echo 
@@ -74,7 +74,7 @@ fi
 echo -n "Do you want restart firewall ? [y/n] [y] "
 read ans
 
-if [ "$ans" = "n" ] ; then 
+if [[ "$ans" = "n" ]] ; then 
 	exit 0
 else 
 	$INITDIR/ipt-conf restart

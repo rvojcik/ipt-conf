@@ -5,8 +5,7 @@
 
 function disable_rules {
 	for rule in $* ; do 
-			rm $CONFDIR/rules.enabled/$rule 2>/dev/null && DONE=2
-			if [ $DONE -eq 2 ] ; then 
+			if rm $CONFDIR/rules.enabled/$rule 2>/dev/null ; then
  				echo "$rule [REMOVED]"
 			else
 				echo "$rule [ERROR]"
@@ -29,7 +28,7 @@ fi
 echo -n "Do you want restart firewall ? [y/n] [y] "
 read ans
 
-if [ "$ans" = "n" ] ; then 
+if [[ "$ans" = "n" ]] ; then 
 	exit 0
 else 
 	$INITDIR/ipt-conf restart

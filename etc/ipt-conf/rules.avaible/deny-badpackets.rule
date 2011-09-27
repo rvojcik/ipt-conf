@@ -2,6 +2,6 @@
 ### BAD PACKETS
 $iptables -A INPUT -p tcp -m state --state INVALID -j DROP
 
-if [ "$IPV6_ENABLE" = "YES" ] ; then 
+if [[ "$IPV6_ENABLE" = "YES" ]] ; then 
 	$ip6tables -A INPUT -p tcp -m state --state INVALID -j DROP
 fi

@@ -2,9 +2,9 @@
 ##### FTP connection tracking module
 modprobe nf_conntrack_ftp 2>&1 > /dev/null || FAILED=1 && FAILED=0
 
-if [ $FAILED -eq 1 ] ; then 
+if (( $FAILED -eq 1 )) ; then 
 	echo 
-	echo "[w] nf_conntrack_ftp not found, maybe not compiled as module"
+	echo "[[w]] nf_conntrack_ftp not found, maybe not compiled as module"
 fi
 
 #Povolime FTP
@@ -13,7 +13,7 @@ $iptables -A INPUT -p TCP --dport 21 -j ACCEPT
 $iptables -A INPUT -m helper --helper ftp -j ACCEPT
 
 
-if [ "$IPV6_ENABLE" = "YES" ] ; then 
+if [[ "$IPV6_ENABLE" = "YES" ]] ; then 
 	$ip6tables -A INPUT -p TCP --dport 20 -j ACCEPT
 	$ip6tables -A INPUT -p TCP --dport 21 -j ACCEPT
 	$ip6tables -A INPUT -m helper --helper ftp -j ACCEPT
