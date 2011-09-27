@@ -6,6 +6,7 @@ echo "---------------------------"
 MAINCONF="/etc/ipt.conf"
 CONFDIR="/etc/ipt-conf"
 INITDIR="/etc/init.d"
+BINDIR="/usr/local/sbin"
 IPTABLES_PATH=$(which iptables)
 IP6TABLES_PATH=$(which ip6tables)
 
@@ -29,7 +30,7 @@ else
 fi
 
 if [[ "$ans" == "y" ]] ; then 
-	echo -e "CONFDIR=${CONFDIR}\nINITDIR=$INITDIR" > $MAINCONF
+	echo -e "BINDIR=${BINDIR}\nCONFDIR=${CONFDIR}\nINITDIR=$INITDIR" > $MAINCONF
 fi
 
 if [ -e $CONFDIR/firewall.conf ] ; then 
