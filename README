@@ -1,0 +1,60 @@
+IPT-CONF README
+===============
+
+0. About
+1. Installation
+2. Files
+3. Contact
+
+0. About
+--------
+IPT-CONF is small and simple configuration framework 
+for linux firewall based on iptables.
+
+You can use cli tools to add or remove rules or
+do it manualy by hand.
+
+1. Installation
+---------------
+
+Best way is unpack sources and copy folders into /
+
+ cd ipt-conf/
+ cp -rf etc /
+ cp -rf usr /
+
+Now it's time to run configuration script
+
+ /usr/local/sbin/firewall-conf-init.sh
+
+This script create configuration files and prepare simple firewall for you.
+
+2. Files
+--------
+
+Configuration files
+
+/etc/ipt.conf                 -  Main configuration file, you can define where 
+                                 is init and configuration  directory located
+
+/etc/ipt-conf/firewall.conf   -  Main firewall configuration with binary path 
+                                 definition and default policy 
+
+/etc/ipt-conf/rules.enabled   -  Directory with enabled rules
+/etc/ipt-conf/rules.available -  Directory with rules definitions
+
+
+You can also find some *.conf files in rules.* directories. 
+Be carefull, they have different meanings depended on parrent directory.
+
+rules.enables/*.conf          - configuration for active rules
+rules.available/*.conf        - configuration for rule initialization (add rule)
+
+3. Contact
+----------
+
+Robert Vojcik 
+Mail: vojcik@gmail.com
+XMPP: wire@cypherpunk.cz
+
+http://www.cypherpunk.cz
