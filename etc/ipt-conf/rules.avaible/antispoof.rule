@@ -1,0 +1,1 @@
+for f in /proc/sys/net/ipv4/conf/*/rp_filter; do echo 1 > $f; done

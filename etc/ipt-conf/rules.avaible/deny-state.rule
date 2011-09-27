@@ -1,0 +1,7 @@
+
+#Stavovy firewall
+$iptables -A INPUT -m state --state RELATED,ESTABLISHED -j DROP
+
+if [ "$IPV6_ENABLE" = "YES" ] ; then 
+	$ip6tables -A INPUT -m state --state RELATED,ESTABLISHED -j DROP
+fi

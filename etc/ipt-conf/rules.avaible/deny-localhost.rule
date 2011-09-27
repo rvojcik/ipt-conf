@@ -1,0 +1,7 @@
+
+##### ALL from localhost
+$iptables -A INPUT -i lo -j DROP
+
+if [ "$IPV6_ENABLE" = "YES" ] ; then 
+	$ip6tables -A INPUT -i lo -j DROP
+fi

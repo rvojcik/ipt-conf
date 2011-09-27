@@ -1,0 +1,10 @@
+### Nastavime default policy
+$iptables -P INPUT $DEFAULT_INPUT_POLICY
+$iptables -P FORWARD $DEFAULT_FORWARD_POLICY
+$iptables -P OUTPUT $DEFAULT_OUTPUT_POLICY
+
+if [ "$IPV6_ENABLE" = "YES" ] ; then 
+	$ip6tables -P INPUT $DEFAULT_INPUT_POLICY_V6
+	$ip6tables -P FORWARD $DEFAULT_FORWARD_POLICY_V6
+	$ip6tables -P OUTPUT $DEFAULT_OUTPUT_POLICY_V6
+fi

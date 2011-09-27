@@ -1,0 +1,10 @@
+. $CONFDIR/rules.enabled/allow-multiport.conf
+
+# Allowed ports in ALLOWED_PORTS
+
+$iptables -A INPUT -p TCP -m multiport --destination-ports $ALLOWED_PORTS -j ACCEPT
+
+if [ "$IPV6_ENABLE" = "YES" ] ; then 
+	$ip6tables -A INPUT -p TCP -m multiport --destination-ports $ALLOWED_PORTS -j ACCEPT
+fi
+

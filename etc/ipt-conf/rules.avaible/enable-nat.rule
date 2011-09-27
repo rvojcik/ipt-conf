@@ -1,0 +1,12 @@
+. $CONFDIR/rules.enabled/enable-nat.conf
+
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+for INTRANET in $INTRANETS ; do 
+
+	$iptables -A FORWARD -s $INTRANET -o $OUT_IF -j ACCEPT
+	$iptables -t nat -A POSTROUTING -o $OUT_IF -s $INTRANET -j MASQUERADE
+
+done
+
+

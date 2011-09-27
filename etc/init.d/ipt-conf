@@ -1,0 +1,23 @@
+#!/bin/bash
+
+BINDIR="/usr/local/sbin"
+
+case "$1" in
+        start)
+           $BINDIR/firewall-start.sh
+	    ;;
+         
+        stop)
+            $BINDIR/firewall-stop.sh
+            ;;
+        restart)
+            $BINDIR/firewall-stop.sh
+            $BINDIR/firewall-start.sh
+	    ;;
+         
+        *)
+            echo $"Usage: $0 {start|stop|restart}"
+            exit 1
+ 
+esac
+

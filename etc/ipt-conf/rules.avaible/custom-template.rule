@@ -1,0 +1,20 @@
+###
+### Custom set of rules 
+###
+#
+#  This file is only template ! Dont't use it. It can be rewrited 
+#  during package upgrade. Copy this rule and name it as you want.
+#  
+#  Example
+#  cd $CONFDIR/rules.avaible
+#  cp custom-template.rule custom-allow-ipv62ipv4-tunnels.rule
+#  firewall-addrule.sh custom-allow-ipv62ipv4-tunnels
+#
+#
+#  Example configuration
+#
+#  $iptables -A INPUT -p TCP --dport 80 -j ACCEPT
+#
+#  if [ "$IPV6_ENABLE" = "YES" ] ; then 
+#	$ip6tables -A INPUT -p TCP --dport 80 -j ACCEPT
+#  fi

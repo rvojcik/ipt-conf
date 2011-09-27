@@ -1,0 +1,18 @@
+. $CONFDIR/rules.enabled/allow-ips.conf
+
+# SUBNETS $IPS
+# SUBNETS $IPSV6
+echo
+
+for IP in $IPS ; do 
+	echo -n "Allow $IP "
+	$iptables -A INPUT -p all -s $IP -j ACCEPT && echo "[OK]" || echo "[ERROR]"
+done
+
+if [ "$IPV6_ENABLE" = "YES" ] ; then 
+
+	for IP in $IPSV6 ; do 
+		echo -n "Allow $IP "
+		$ip6tables -A INPUT -p all -s $IP -j ACCEPT && echo "[OK]" || echo "[ERROR]"
+	done
+fi

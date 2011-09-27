@@ -1,0 +1,13 @@
+. $CONFDIR/rules.enabled/check-old-traffic.conf
+
+# OLD IP4 in OLDIP
+# OLD IP6 in OLDIPV6
+# Checked for ports in CHECKPORTS
+
+$iptables  -A INPUT -d $OLDIP -p tcp -m multiport --destination-ports $CHECKPORTS -j ACCEPT
+
+if [ "$IPV6_ENABLE" = "YES" ] ; then 
+	if ! [ -z $OLDIPV6] ; then 
+		$ip6tables -A INPUT -d $OLDIPV6 -p tcp -m multiport --destination-ports $CHECKPORTS -j ACCEPT
+	fi
+fi

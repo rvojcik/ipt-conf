@@ -1,0 +1,9 @@
+
+#Povolime WEB
+$iptables -A INPUT -p TCP --dport 80 -j DROP
+$iptables -A INPUT -p TCP --dport 443 -j DROP
+
+if [ "$IPV6_ENABLE" = "YES" ] ; then 
+	$ip6tables -A INPUT -p TCP --dport 80 -j DROP
+	$ip6tables -A INPUT -p TCP --dport 443 -j DROP
+fi

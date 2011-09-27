@@ -1,0 +1,12 @@
+
+$iptables -A INPUT -p TCP --dport 161 -j DROP
+$iptables -A INPUT -p UDP --dport 161 -j DROP
+$iptables -A INPUT -p TCP --dport 162 -j DROP
+$iptables -A INPUT -p UDP --dport 162 -j DROP
+
+if [ "$IPV6_ENABLE" = "YES" ] ; then 
+	$ip6tables -A INPUT -p TCP --dport 161 -j DROP
+	$ip6tables -A INPUT -p UDP --dport 161 -j DROP
+	$ip6tables -A INPUT -p TCP --dport 162 -j DROP
+	$ip6tables -A INPUT -p UDP --dport 162 -j DROP
+fi
