@@ -1,0 +1,33 @@
+#!/bin/bash
+
+. /etc/ipt.conf
+
+command=$1
+shift
+
+case $command in 
+
+"add")
+	$BINDIR/firewall-addrule.sh $@
+;;
+"del")
+	$BINDIR/firewall-rmrule.sh $@
+;;
+"status")
+	ls -1 $CONFDIR/rules.enabled/ | grep -e ".rule$"
+;;
+"stop")
+	$BINDIR/firewall-stop.sh
+;;
+"start")
+	$BINDIR/firewall-start.sh
+;;
+"restart")
+	$BINDIR/firewall-stop.sh
+	$BINDIR/firewall-start.sh
+;;
+*)
+	echo -e "\nUsage: $0 <add|del|status|stop|start|restart|init> [rule1] [rule2] ...\n"
+;;
+
+esac
