@@ -6,7 +6,7 @@ for FORWARD in $FORWARDERS ; do
 
 	SaveIFS=$IFS
 	IFS=":"
-	declare -a Array=($*)
+	declare -a Array=($FORWARD)
 	IFS=$SaveIFS
 
 	IN_IFACE=${Array[0]}
