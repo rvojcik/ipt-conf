@@ -1,4 +1,3 @@
-### Nastavime default policy
 $iptables -P INPUT $DEFAULT_INPUT_POLICY
 $iptables -P FORWARD $DEFAULT_FORWARD_POLICY
 $iptables -P OUTPUT $DEFAULT_OUTPUT_POLICY

@@ -1,5 +1,3 @@
-
-#povolime ICMP z vonku
 $iptables -A INPUT -p ICMP -j DROP 
 
 if [[ "$IPV6_ENABLE" = "YES" ]] ; then 

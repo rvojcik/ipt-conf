@@ -7,7 +7,6 @@ if (( $FAILED -eq 1 )) ; then
 	echo "[[w]] nf_conntrack_ftp not found, maybe not compiled as module"
 fi
 
-#Povolime FTP
 $iptables -A INPUT -p TCP --dport 20 -j ACCEPT
 $iptables -A INPUT -p TCP --dport 21 -j ACCEPT
 $iptables -A INPUT -m helper --helper ftp -j ACCEPT

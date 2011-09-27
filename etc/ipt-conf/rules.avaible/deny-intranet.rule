@@ -1,3 +1,1 @@
-
-## Povolime vnutornu siet ak existuje
 $iptables -A INPUT -s 192.168.0.0/16 -j DROP

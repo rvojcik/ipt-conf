@@ -1,4 +1,3 @@
-#Povolime FTP
 $iptables -A INPUT -p TCP --dport 20 -j DROP
 $iptables -A INPUT -p TCP --dport 21 -j DROP
 
