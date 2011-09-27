@@ -1,0 +1,22 @@
+. $CONFDIR/rules.enabled/port-forwarding-v4.conf
+
+# Definitions in FORWARDERS ( <IN_IFACE>:<DPORT>:<DADDRESS>:<TPORT>:<TADDRESS> )
+
+for FORWARD in $FORWARDERS ; do 
+
+	SaveIFS=$IFS
+	IFS=":"
+	declare -a Array=($*)
+	IFS=$SaveIFS
+
+	IN_IFACE=${Array[0]}
+	DPORT=${Array[1]}
+	DADDRESS=${Array[2]}
+	TPORT=${Array[3]}
+	TADDRESS=${Array[4]}
+
+	echo -n "PORT FW: ${DADDRESS}:${DPORT}->${TADDRESS}:${TPORT} "
+	$iptables -t nat -A PREROUTING -i $IN_IFACE -p tcp --dport $DPORT -d $DADDRESS -j DNAT --to ${TADDRESS}:${TPORT} && echo "[ OK ]" || echo "[ ERR ]"
+	
+
+done
