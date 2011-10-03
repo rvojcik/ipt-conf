@@ -61,13 +61,13 @@ if [ ! -e $CONFDIR/rules.enabled  ] ; then
 
         mkdir $CONFDIR/rules.enabled
         echo "Setting default rules set"
-        ln -s $CONFDIR/rules.avaible/default-policy.rule $CONFDIR/rules.enabled/00-default-policy.rule
-        ln -s $CONFDIR/rules.avaible/deny-badpackets.rule $CONFDIR/rules.enabled/05-deny-badpackets.rule
-        ln -s $CONFDIR/rules.avaible/deny-forwarding.rule $CONFDIR/rules.enabled/10-deny-forwarding.rule
-        ln -s $CONFDIR/rules.avaible/antispoof.rule $CONFDIR/rules.enabled/11-antispoof.rule
-        ln -s $CONFDIR/rules.avaible/allow-localhost.rule $CONFDIR/rules.enabled/20-allow-localhost.rule
-        ln -s $CONFDIR/rules.avaible/allow-icmp.rule $CONFDIR/rules.enabled/35-allow-icmp.rule
-        ln -s $CONFDIR/rules.avaible/allow-state.rule $CONFDIR/rules.enabled/50-allow-state.rule
+        ln -s $CONFDIR/rules.available/default-policy.rule $CONFDIR/rules.enabled/00-default-policy.rule
+        ln -s $CONFDIR/rules.available/deny-badpackets.rule $CONFDIR/rules.enabled/05-deny-badpackets.rule
+        ln -s $CONFDIR/rules.available/deny-forwarding.rule $CONFDIR/rules.enabled/10-deny-forwarding.rule
+        ln -s $CONFDIR/rules.available/antispoof.rule $CONFDIR/rules.enabled/11-antispoof.rule
+        ln -s $CONFDIR/rules.available/allow-localhost.rule $CONFDIR/rules.enabled/20-allow-localhost.rule
+        ln -s $CONFDIR/rules.available/allow-icmp.rule $CONFDIR/rules.enabled/35-allow-icmp.rule
+        ln -s $CONFDIR/rules.available/allow-state.rule $CONFDIR/rules.enabled/50-allow-state.rule
 
 fi
 

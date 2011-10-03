@@ -6,7 +6,7 @@
 #  during package upgrade. Copy this rule and name it as you want.
 #  
 #  Example
-#  cd $CONFDIR/rules.avaible
+#  cd $CONFDIR/rules.available
 #  cp custom-template.rule custom-allow-ipv62ipv4-tunnels.rule
 #  firewall-addrule.sh custom-allow-ipv62ipv4-tunnels
 #
