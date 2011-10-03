@@ -22,6 +22,9 @@ case $command in
 "stop")
 	$BINDIR/firewall-stop.sh
 ;;
+"detect")
+	$BINDIR/firewall-detect.sh $@
+;;
 "start")
 	$BINDIR/firewall-start.sh
 ;;
@@ -30,7 +33,7 @@ case $command in
 	$BINDIR/firewall-start.sh
 ;;
 *)
-	echo -e "\nUsage: $0 <add|del|status|stop|start|restart|init> [rule1] [rule2] ...\n"
+	echo -e "\nUsage: $0 <add|del|status|detect|stop|start|restart|init> [rule1] [rule2] ...\n"
 ;;
 
 esac
