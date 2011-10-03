@@ -13,6 +13,9 @@ case $command in
 "del")
 	$BINDIR/firewall-rmrule.sh $@
 ;;
+"detect")
+	$BINDIR/firewall-detect.sh $@
+;;
 "status")
 	ls -1 $CONFDIR/rules.enabled/ | grep -e ".rule$"
 ;;
