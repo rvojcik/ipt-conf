@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# ipt-conf project
+#
+# Configuration init script
+#
+# Robert Vojcik ( vojcik@gmail.com )
 
 echo "Firewall init configuration"
 echo "---------------------------"
