@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+# ipt-conf project
+#
+# Main control wrapper
+# Robert Vojcik ( vojcik@gmail.com )
 
 . /etc/ipt.conf
 
