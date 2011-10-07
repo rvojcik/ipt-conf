@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# ipt-conf project
+#
+# Script for clear and stop firewall
+#
+# Robert Vojcik ( vojcik@gmail.com )
 
 . /etc/ipt.conf
 

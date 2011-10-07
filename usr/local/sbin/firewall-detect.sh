@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# ipt-conf project
+#
+# Script for detection listening ports of running applications
+#
+# Jan Guttek ( tekian@tekian.eu )
 
 if (( $# < 1 )); then
 	echo -e "Usage: $0 [search..]"

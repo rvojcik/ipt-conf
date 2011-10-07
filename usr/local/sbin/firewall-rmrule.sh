@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# ipt-conf project
+#
+# Script for removing rules from active configuration
+#
+# Robert Vojcik ( vojcik@gmail.com )
 
 . /etc/ipt.conf
 

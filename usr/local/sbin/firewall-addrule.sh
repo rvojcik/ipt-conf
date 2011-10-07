@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# ipt-conf project
+#
+# Script for add rules into firewall configuration
+# 
+# Robert Vojcik ( vojcik@gmail.com )
 
 . /etc/ipt.conf
 

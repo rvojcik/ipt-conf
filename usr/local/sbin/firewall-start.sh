@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# ipt-conf project
+#
+# Starting firewall script
+#
+# Robert Vojcik ( vojcik@gmail.com )
 
 . /etc/ipt.conf
 
