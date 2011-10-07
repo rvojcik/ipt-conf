@@ -4,7 +4,8 @@ IPT-CONF README
 0. About
 1. Installation
 2. Files
-3. Contact
+3. Mirros
+4. Contact
 
 0. About
 --------
@@ -50,14 +51,21 @@ Be carefull, they have different meanings depended on parrent directory.
 rules.enables/*.conf          - configuration for active rules
 rules.available/*.conf        - configuration for rule initialization (add rule)
 
-3. Contact
+3. Mirrors
+----------
+
+Primary repository is stored on github.com
+git://github.com/rvojcik/ipt-conf.git
+
+Secondary mirror accessible via http is stored on git.cyberpunk.cz
+http://git.cyberpunk.cz/?p=ipt-conf.git
+
+4. Contact
 ----------
 
 Robert Vojcik 
 Mail: vojcik@gmail.com
 XMPP: wire@cypherpunk.cz
-
 http://www.cypherpunk.cz
 
 
---------------------------------------------------------------------------------------
