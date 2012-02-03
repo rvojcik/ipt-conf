@@ -11,8 +11,26 @@
 #  -------
 #  Robert Vojcik ( vojcik@gmail.com )
 
-$iptables -A INPUT -p ICMP -j ACCEPT 
+
+if [[ $DEFAULT_INPUT_POLICY != "ACCEPT" ]] ; then 
+
+	$iptables -A INPUT -p ICMP -j ACCEPT 
+fi
+
+if [[ $DEFAULT_OUTPUT_POLICY == "DROP" ]] ; then
+	$iptables -A OUTPUT -p ICMP -j ACCEPT
+fi
+
+# IPV6 ###########################################
 
 if [[ "$IPV6_ENABLE" = "YES" ]] ; then 
-	$ip6tables -A INPUT -p ICMPV6 -j ACCEPT
+
+	if [[ $DEFAULT_INPUT_POLICY_V6 != "ACCEPT" ]] ; then
+		$ip6tables -A INPUT -p ICMPV6 -j ACCEPT
+	fi
+
+	if [[ $DEFAULT_OUTPUT_POLICY_V6 == "DROP" ]] ; then
+		$ip6tables -A OUTPUT -p ICMPV6 -j ACCEPT
+	fi
+
 fi
