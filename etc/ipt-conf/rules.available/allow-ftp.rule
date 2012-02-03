@@ -20,13 +20,35 @@ if (( $FAILED -eq 1 )) ; then
 	echo "[[w]] nf_conntrack_ftp not found, maybe not compiled as module"
 fi
 
-$iptables -A INPUT -p TCP --dport 20 -j ACCEPT
-$iptables -A INPUT -p TCP --dport 21 -j ACCEPT
-$iptables -A INPUT -m helper --helper ftp -j ACCEPT
+if [[ $DEFAULT_INPUT_POLICY != "ACCEPT" ]] ; then 
 
+	$iptables -A INPUT -p TCP --dport 20 -j ACCEPT
+	$iptables -A INPUT -p TCP --dport 21 -j ACCEPT
+	$iptables -A INPUT -m helper --helper ftp -j ACCEPT
 
+fi
+
+if [[ $DEFAULT_OUTPUT_POLICY == "DROP" ]] ; then 
+	
+	$iptables -A OUTPUT -p TCP --sport 20 -j ACCEPT
+	$iptables -A OUTPUT -p TCP --sport 21 -j ACCEPT
+fi
+
+# IPV6 ###########################################################################
 if [[ "$IPV6_ENABLE" = "YES" ]] ; then 
-	$ip6tables -A INPUT -p TCP --dport 20 -j ACCEPT
-	$ip6tables -A INPUT -p TCP --dport 21 -j ACCEPT
-	$ip6tables -A INPUT -m helper --helper ftp -j ACCEPT
+
+	if [[ $DEFAULT_INPUT_POLICY_V6 != "ACCEPT" ]] ; then 
+		$ip6tables -A INPUT -p TCP --dport 20 -j ACCEPT
+		$ip6tables -A INPUT -p TCP --dport 21 -j ACCEPT
+		$ip6tables -A INPUT -m helper --helper ftp -j ACCEPT
+	fi
+
+	if [[ $DEFAULT_OUTPUT_POLICY_V6 == "DROP" ]] ; then 
+	
+		$ip6tables -A OUTPUT -p TCP --sport 20 -j ACCEPT
+		$ip6tables -A OUTPUT -p TCP --sport 21 -j ACCEPT
+	fi
+fi
+
+	
 fi
