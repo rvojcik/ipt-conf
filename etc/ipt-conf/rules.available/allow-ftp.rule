@@ -50,5 +50,3 @@ if [[ "$IPV6_ENABLE" = "YES" ]] ; then
 	fi
 fi
 
-	
-fi
