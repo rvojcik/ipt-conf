@@ -10,7 +10,7 @@
 #  
 #  Contact
 #  -------
-#  Robert Vojcik ( vojcik@gmail.com )
+#  Robert Vojcik ( robert@vojcik.net )
 #  Jan Guttek ( tekian@tekian.eu )
 
 if (( $# < 1 )); then

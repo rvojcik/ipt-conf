@@ -9,6 +9,6 @@
 #  
 #  Contact
 #  -------
-#  Robert Vojcik ( vojcik@gmail.com )
+#  Robert Vojcik ( robert@vojcik.net )
 
 for f in /proc/sys/net/ipv4/conf/*/rp_filter; do echo 1 > $f; done

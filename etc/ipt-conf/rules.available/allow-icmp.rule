@@ -9,7 +9,7 @@
 #  
 #  Contact
 #  -------
-#  Robert Vojcik ( vojcik@gmail.com )
+#  Robert Vojcik ( robert@vojcik.net )
 
 $iptables -A INPUT -p ICMP -j ACCEPT 
 
