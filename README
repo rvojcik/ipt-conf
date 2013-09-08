@@ -5,7 +5,8 @@ Linu IPtables Configurator
 Easy way to configure and sync firewall between many servers.
 It uses directory with rules enabled and rules available. 
 
-You should use puppet for distribution firewall between servers.
+You should use puppet for distribution firewall between servers or easily
+change firewall rules based on server configured services.
 
 Index
 -----
@@ -66,23 +67,22 @@ rules.available/*.conf        - configuration for rule initialization (add rule)
 Primary repository is stored on github.com
 git://github.com/rvojcik/ipt-conf.git
 
-Secondary mirror accessible via http is stored on git.cyberpunk.cz
-http://git.cyberpunk.cz/?p=ipt-conf.git
-
 #  IPT-CONF small configuration framework to handle configuration of linux iptables netfilter.
 #  Copyright (C) 2011 Robert Vojcik
 #  
 #  This program is free software; 
 #  you can redistribute it and/or modify it under the terms of the GNU General Public License 
-#  as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+#  as published by the Free Software Foundation; either version 2 of the License, 
+#  or (at your option) any later version.
 #  
 #  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
 #  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
 #  See the GNU General Public License for more details.
 #  
 #  You should have received a copy of the GNU General Public License along with this program; 
-#  if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+#  if not, write to the Free Software Foundation, Inc., 
+#  59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #  
 #  Contact
 #  -------
-#  Robert Vojcik ( vojcik@gmail.com )
+#  Robert Vojcik ( robert@vojcik.net )
